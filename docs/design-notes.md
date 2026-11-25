@@ -1,0 +1,19 @@
+# Design notes
+
+Slop to Gold is an independent adaptation of Lauren Tan’s talk. This page connects the original ideas to the workflows and example in this repository.
+
+## From the talk to the repo
+
+| Talk segment | Implementation here |
+| --- | --- |
+| [Trust pyramid and codebase quality](https://www.youtube.com/watch?v=O_zcc6Xl12g&t=123s) | Use code structure and executable rules first. Reserve prose for decisions that need judgment. |
+| [Dune and enforceable boundaries](https://www.youtube.com/watch?v=O_zcc6Xl12g&t=300s) | Tan illustrates module boundaries in Dune. This repository applies the same principle at a different boundary, using SQLite to enforce one record per batch ID. |
+| [Timer workarounds and lint diagnostics](https://www.youtube.com/watch?v=O_zcc6Xl12g&t=416s) | Trace repeated corrections to their cause. The runnable behavior check names the failed invariant, the observed rows, and the repair. |
+| [Runtime verification and feature maps](https://www.youtube.com/watch?v=O_zcc6Xl12g&t=580s) | Record the public entry point, drive it, and check the persisted result. |
+| [Code as memory](https://www.youtube.com/watch?v=O_zcc6Xl12g&t=264s) | Retire obsolete workaround paths once callers have migrated. |
+| [Formal verification](https://www.youtube.com/watch?v=O_zcc6Xl12g&t=650s) | Consider bounded property or model checks for important cases ordinary tests cannot cover. |
+| [Release automation](https://www.youtube.com/watch?v=O_zcc6Xl12g&t=911s) | Verify the local edit, run, and debug loop before automating release. |
+
+[Original talk and slide viewer](https://ai.engineer/talks/O_zcc6Xl12g-all-code-is-slop-except-mine) · [Trust pyramid slide frame](https://ai.engineer/api/talk-essay-media/c094802d6073e6ab31aad6a7406c807a88afd34efea9b445be9196cc365761dc) · [Feature map slide frame](https://ai.engineer/api/talk-essay-media/0a57dd9b23616685acb085340c05e2583095347dc8f0ddb0fea3b4f5943aa210)
+
+[Karpathy’s LLM Wiki idea file](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) and [llm-code-wiki](https://github.com/dylannalex/llm-code-wiki) are precedents for turning a public explanation into a task-specific tool. Related implementations of Lauren Tan’s talk include [All Code Is Slop · Agent Skills](https://github.com/wilsonwangdev/all-code-is-slop-skills) and [Trust Pyramid](https://github.com/Tim-rppl/trust-pyramid).
