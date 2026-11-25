@@ -2,6 +2,16 @@
 
 Slop to Gold is an independent adaptation of Lauren Tan’s talk. This page connects the original ideas to the workflows and example in this repository.
 
+## pstack workflow mapping
+
+pstack already covers the workflow practiced here. Each link points to the upstream skill that addresses that part of the process.
+
+- [`correct`](https://github.com/cursor/plugins/blob/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/pstack/skills/correct/SKILL.md) turns repeat mistakes into enforceable rules and proves that each new check catches a known counterexample.
+- [`interrogate`](https://github.com/cursor/plugins/blob/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/pstack/skills/interrogate/SKILL.md) stress-tests a change and backs review findings with reproducible runs.
+- [`create-verification-skill`](https://github.com/cursor/plugins/blob/ca782ed8b3c2c521cead8e1720d55c3a5dbf2347/pstack/skills/create-verification-skill/SKILL.md) helps a project build a verification workflow around the entry point its users actually use.
+
+The local example demonstrates that approach at a SQLite write boundary. The [CLI verifier](../examples/verify.py) drives the original and corrected versions and reads back the saved data. The [feature map](../examples/feature-map.md) describes the scenario and its coverage.
+
 ## From the talk to the repo
 
 | Talk segment | Implementation here |

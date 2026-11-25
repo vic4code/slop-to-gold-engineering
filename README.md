@@ -1,14 +1,16 @@
 # Slop to Gold
 
-**Make recurring code review feedback executable.**
+**A runnable example of turning repeat code review feedback into a regression check.**
 
-Slop to Gold is an open-source playbook and installable skill for coding agents. Use it to turn a repeated review comment into a code constraint or test, then prove the change through the same entry point your users rely on.
+Slop to Gold is an independent teaching project inspired by Lauren Tan's *All Code Is Slop (Except Mine)*. It includes a Python and SQLite example, a short engineering guide, and a companion Agent Skill.
 
-[Quickstart](#quickstart) · [Install](#install-the-skill) · [Guidelines](skills/slop-to-gold-engineering/references/engineering-standard.md) · [Architecture](docs/architecture.md) · [Contributing](CONTRIBUTING.md)
+[Quickstart](#quickstart) · [Install the companion skill](#install-the-companion-skill) · [Design notes](docs/design-notes.md) · [Architecture](docs/architecture.md)
 
-- **Enforce the supported path.** Put the rule in the API, type system, database, or linter where it can catch the mistake.
-- **Verify the actual behavior.** Reproduce the failure, rerun it after the fix, and check that a valid case still works.
-- **Use the tools you already have.** Run the skill with your project's test and build commands. [pstack](https://github.com/cursor/plugins/tree/main/pstack) adds optional workflows.
+## How this relates to pstack
+
+[pstack](https://github.com/cursor/plugins/tree/main/pstack) already covers the core workflow of preventing recurring mistakes, reviewing changes with evidence, and verifying real user flows. If you already use pstack, use its workflows directly. [See the workflow mapping](docs/design-notes.md#pstack-workflow-mapping).
+
+This repository adds a small, runnable example. The same CLI check shows a duplicate write in the original implementation and verifies that a database constraint fixes it while allowing a different ID. The demo runs with the Python standard library. The companion skill can run on its own and refers to pstack workflows when they are available.
 
 ## Quickstart
 
@@ -28,7 +30,7 @@ Verified: a replay creates one row, and a distinct import still creates its own 
 
 The demo submits the same batch ID twice and a different ID once. A database constraint makes retries safe in the fixed importer. The verifier drives the CLI and reads back the saved rows. Add `--revision before` to see the failing check and its suggested repair. See the [feature map](examples/feature-map.md) for the scenarios covered.
 
-## Install the skill
+## Install the companion skill
 
 Run this from the project where you want to use the skill with the [Skills CLI](https://github.com/vercel-labs/skills):
 
