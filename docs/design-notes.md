@@ -12,6 +12,10 @@ pstack already covers the workflow practiced here. Each link points to the upstr
 
 The local example demonstrates that approach at a SQLite write boundary. The [CLI verifier](../examples/verify.py) drives the original and corrected versions and reads back the saved data. The [feature map](../examples/feature-map.md) describes the scenario and its coverage.
 
+## Grok Bot's project-specific implementation
+
+The talk describes a broader engineering system. Grok Bot puts constraints in its Electron framework, Dune. Its feature map and CLI let agents exercise the running app. The team also describes experiments with formal verification and an automated release workflow that tests new builds and opens fixes. pstack supplies reusable workflows for some of these practices. The project's own architecture and verification tools carry them out in Grok Bot. [Original talk and slides](https://ai.engineer/talks/O_zcc6Xl12g-all-code-is-slop-except-mine)
+
 ## From the talk to the repo
 
 | Talk segment | Implementation here |

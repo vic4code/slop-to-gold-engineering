@@ -8,7 +8,7 @@ Slop to Gold is an independent teaching project inspired by Lauren Tan's *All Co
 
 ## How this relates to pstack
 
-[pstack](https://github.com/cursor/plugins/tree/main/pstack) already covers the core workflow of preventing recurring mistakes, reviewing changes with evidence, and verifying real user flows. If you already use pstack, use its workflows directly. [See the workflow mapping](docs/design-notes.md#pstack-workflow-mapping).
+The talk describes how Grok Bot's team applied these ideas in its own codebase, including the Dune framework, app-specific verification tools, and release automation. [pstack](https://github.com/cursor/plugins/tree/main/pstack) is Lauren Tan's collection of reusable agent skills. It already covers the core workflow of preventing recurring mistakes, reviewing changes with evidence, and verifying real user flows. If you already use pstack, use its workflows directly. [See the workflow mapping](docs/design-notes.md#pstack-workflow-mapping).
 
 This repository adds a small, runnable example. The same CLI check shows a duplicate write in the original implementation and verifies that a database constraint fixes it while allowing a different ID. The demo runs with the Python standard library. The companion skill can run on its own and refers to pstack workflows when they are available.
 
